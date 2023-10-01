@@ -6,6 +6,9 @@ class ResumesController < ApplicationController
     @resumes = Resume.all
   end
 
+  def contact
+  end
+
   # GET /resumes/1 or /resumes/1.json
   def show
   end
