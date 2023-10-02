@@ -29,3 +29,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+20230930124332_create_resumes
