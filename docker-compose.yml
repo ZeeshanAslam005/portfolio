@@ -1,0 +1,29 @@
+version: '3.7'
+
+x-common: &common
+  env_file: .env.dev.docker
+  build:
+    context: .
+    dockerfile: ./docker/development/Dockerfile
+
+services:
+  db:
+    image: postgres:13.3
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=zeeshanaslam
+      - POSTGRES_DB=portfolio_development
+      - POSTGRES_PASSWORD=zeeshanaslam
+    ports:
+      - 3180:5432
+    # env_file:
+    #   - ./env/postgres.env # you can also define env variables like this.
+  web:
+    <<: *common
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/portfolio # add our local code to dockerfile
+    depends_on:
+      - db  # add all dependant container

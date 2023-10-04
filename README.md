@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+docker compose up
+docker­ compose run web rake db:create
+
+
+

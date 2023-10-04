@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
+  host: db #<%= ENV['DATABASE_HOST'] %>
+  port: 5432 #<%= ENV['DATABASE_PORT'] || '5432' %>
   database: portfolio_development
+  username: zeeshanaslam
+  password: zeeshanaslam
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

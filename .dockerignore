@@ -1,0 +1,5 @@
+.git
+.dockerignore
+.env
+portfolio/vendor/bundle/
+portfolio/tmp/

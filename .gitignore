@@ -30,4 +30,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+#ignore env file
+.env
+
 20230930124332_create_resumes
