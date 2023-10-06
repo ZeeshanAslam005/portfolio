@@ -1,5 +1,3 @@
-echo "Connecting with Postgres...."
-
 #!/bin/sh
 set -e
 

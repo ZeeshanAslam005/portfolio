@@ -26,4 +26,11 @@ COPY . /portfolio
 # Expose port
 EXPOSE 3000
 
-ENTRYPOINT ["/portfolio/docker/entrypoint.sh"]
+# Copy the entrypoint script into the container
+COPY docker/entrypoint.sh /usr/bin/entrypoint.sh
+
+# Grant execute permissions to the entrypoint script
+RUN chmod +x /usr/bin/entrypoint.sh
+
+# Set the entrypoint script as the entry point for the container
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
