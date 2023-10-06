@@ -32,5 +32,6 @@
 
 #ignore env file
 .env
+.env.docker
 
 20230930124332_create_resumes
