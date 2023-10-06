@@ -48,3 +48,6 @@ docker-compose up
 ```
 docker exec -it portfolio-web-1 /bin/bash
 ```
+
+Open vs code
+EDITOR="code --wait" rails credentials:edit
