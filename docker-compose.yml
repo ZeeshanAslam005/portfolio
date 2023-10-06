@@ -12,18 +12,19 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=zeeshanaslam
+      - POSTGRES_USER=portfolio
       - POSTGRES_DB=portfolio_development
-      - POSTGRES_PASSWORD=zeeshanaslam
+      - POSTGRES_PASSWORD=password
     ports:
-      - 3180:5432
-    # env_file:
-    #   - ./env/postgres.env # you can also define env variables like this.
+      - 5431:5432
   web:
     <<: *common
-    ports:
-      - '3000:3000'
+    command: ["bundle exec rails server -b 0.0.0.0"]
     volumes:
-      - .:/portfolio # add our local code to dockerfile
+      - .:/portfolio:delegated
+    ports:
+      - "3001:3000"
     depends_on:
-      - db  # add all dependant container
+      - db
+    stdin_open: true
+    tty: true

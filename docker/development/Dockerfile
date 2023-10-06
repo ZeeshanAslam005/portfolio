@@ -26,4 +26,4 @@ COPY . /portfolio
 # Expose port
 EXPOSE 3000
 
-CMD [ "bundle","exec", "puma", "config.ru"]
+ENTRYPOINT ["/portfolio/docker/entrypoint.sh"]
